@@ -17,6 +17,9 @@ INSTALLED_APPS = [
     "users",
     "categories",
     "products",
+    "addresses",
+    "orders",
+    "carts",
 ]
 
 MIDDLEWARE = []
@@ -30,11 +33,11 @@ WSGI_APPLICATION = "shop.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "HOST": os.getenv("DATABASE_HOST"),
-        "USER": os.getenv("DATABASE_USER"),
-        "PASSWORD": os.getenv("DATABASE_PASSWORD"),
-        "NAME": os.getenv("DATABASE_NAME"),
-        "PORT": os.getenv("DATABASE_PORT"),
+        "HOST": os.getenv("SHOP_HOST"),
+        "USER": os.getenv("SHOP_USER"),
+        "PASSWORD": os.getenv("SHOP_PASSWORD"),
+        "NAME": os.getenv("SHOP_NAME"),
+        "PORT": os.getenv("SHOP_PORT"),
     }
 }
 
