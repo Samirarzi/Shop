@@ -4,9 +4,6 @@ from django.db.models.functions import Now
 from categories.models import Category
 
 
-# from categories.models import Category
-
-
 class Product(models.Model):
     class Meta:
         db_table = "products"
