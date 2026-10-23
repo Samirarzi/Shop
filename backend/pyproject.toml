@@ -5,14 +5,16 @@ description = ""
 authors = [
     {name = "jenovax86",email = "shruzvn@gmail.com"}
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "djangorestframework (>=3.18.3,<4.0.0)",
     "dotenv (>=0.9.9,<0.10.0)",
-    "mysqlclient (>=2.3.0,<3.0.0)"
+    "mysqlclient (>=2.3.0,<3.0.0)",
+    "django-filter (>=26.2,<27.0)"
 ]
 
-
+[tool.poetry]
+package-mode = false
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
