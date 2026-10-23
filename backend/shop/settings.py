@@ -13,6 +13,7 @@ load_dotenv(BASE_DIR / '.env')
 
 INSTALLED_APPS = [
     "rest_framework",
+    "django-filter",
     "django.contrib.contenttypes",
     "users",
     "categories",
