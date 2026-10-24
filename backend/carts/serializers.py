@@ -6,8 +6,8 @@ from carts.models import Carts
 class CartsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Carts
-        fields = ["user", "product", "quantity", "user",]
-        # read_only_fields = ["user", ]
+        fields = ["user", "product", "quantity",]
+        read_only_fields = ["user", ]
 
         def validate_quantity(self, value):
             if value < 0:
