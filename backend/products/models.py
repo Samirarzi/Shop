@@ -42,7 +42,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, null=False, blank=False)
     size = models.CharField(max_length=15, choices=Sizes.choices, null=False, blank=False)
-    price = models.FloatField(null=False, blank=False)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
     color = models.CharField(max_length=15, choices=Colors.choices, null=False, blank=False)
     created_at = models.DateTimeField(db_default=Now())
     updated_at = models.DateTimeField(db_default=Now())
