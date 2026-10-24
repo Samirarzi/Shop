@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from categories.models import Category
+from addresses.models import Address
 
 
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Category
-        fields = "__all__"
+        model = Address
+        fields = ["country", "zip_code", 'city', 'province', 'user']
