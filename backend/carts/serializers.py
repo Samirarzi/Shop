@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from categories.models import Category
+from carts.models import Carts
 
 
 class CartsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Category
-        fields = "__all__"
+        model = Carts
+        fields = ["user", "product"]
