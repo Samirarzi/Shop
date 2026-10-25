@@ -16,7 +16,7 @@ class ProductCursorPagination(CursorPagination):
 
 
 class ProductViewSet(ListUpdateModelMixin, ListDestroyModelMixin, viewsets.ModelViewSet):
-    queryset = Product.objects.all()
+    queryset = Product.objects.filter(deleted_at__isnull=True)
     serializer_class = ProductSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = ProductFilter

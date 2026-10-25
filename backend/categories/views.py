@@ -6,7 +6,7 @@ from categories.serializers import CategorySerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    queryset = Category.objects.all()
+    queryset = Category.objects.filter(deleted_at__isnull=True)
     serializer_class = CategorySerializer
 
     def perform_destroy(self, instance):

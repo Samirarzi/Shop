@@ -6,7 +6,7 @@ from carts.serializers import CartsSerializer
 
 
 class CartsViewSet(viewsets.ModelViewSet):
-    queryset = Carts.objects.all()
+    queryset = Carts.objects.filter(deleted_at__isnull=True)
     serializer_class = CartsSerializer
 
 

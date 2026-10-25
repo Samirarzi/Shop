@@ -6,7 +6,7 @@ from orders.serializers import OrderSerializer
 
 
 class OrderViewSet(viewsets.ModelViewSet):
-    queryset = Order.objects.all()
+    queryset = Order.objects.filter(deleted_at__isnull=True)
     serializer_class = OrderSerializer
 
     def perform_destroy(self, instance):
