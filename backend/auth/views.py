@@ -1,4 +1,5 @@
 from rest_framework import status
+from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -23,7 +24,7 @@ class RefreshAPIView(APIView):
     def get(self, request):
         refresh_token = request.COOKIES.get('refresh')
         if not refresh_token:
-            return Exception("There is no refresh token.")
+            return AuthenticationFailed("There is no refresh token.")
 
         access_token, refresh_token = refresh_session_token(refresh_token)
         response = Response({"success": True, "tokens": {"access": access_token}},
