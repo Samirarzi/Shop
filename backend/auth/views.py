@@ -5,7 +5,6 @@ from rest_framework.views import APIView
 from auth.serializers import LoginSerializer
 from auth.services.login import create_login_session
 from auth.services.refresh import refresh_session_token
-from auth.services.tokens import decode_refresh_token, sign_jwt_tokens
 
 
 class LoginAPIView(APIView):
