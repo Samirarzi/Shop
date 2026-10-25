@@ -11,6 +11,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 load_dotenv(BASE_DIR / '.env')
 
+ACCESS_SECRET_KEY = os.environ.get('JWT_ACCESS_TOKEN_SECRET')
+REFRESH_SECRET_KEY = os.environ.get('JWT_REFRESH_TOKEN_SECRET')
+
 INSTALLED_APPS = [
     "rest_framework",
     "django_filters",
@@ -22,6 +25,7 @@ INSTALLED_APPS = [
     "orders",
     "carts",
     "sessions",
+    "auth",
 ]
 
 MIDDLEWARE = []
