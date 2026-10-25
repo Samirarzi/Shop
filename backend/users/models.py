@@ -3,6 +3,10 @@ from django.db.models.functions import Now
 
 
 class User(models.Model):
+    @property
+    def is_authenticated(self):
+        return True
+
     class Meta:
         db_table = 'users'
 
