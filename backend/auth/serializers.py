@@ -9,7 +9,7 @@ class LoginSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=100, required=True)
 
     def validate(self, attrs):
-        user = User.objects.filter(username=attrs['username']).first()
+        user = User.objects.filter(username=attrs['username'], deleted_at__isnull=True).first()
 
         if user is None or not check_password(attrs['password'], user.password):
             raise serializers.ValidationError("Invalid username or password.")
