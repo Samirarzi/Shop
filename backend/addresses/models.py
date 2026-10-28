@@ -11,7 +11,7 @@ class Address(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     country = models.CharField(max_length=20)
-    zip_code = models.CharField(max_length=20)
+    zip_code = models.CharField(max_length=10)
     city = models.CharField(max_length=10)
     province = models.CharField(max_length=20)
     created_at = models.DateTimeField(db_default=Now())
